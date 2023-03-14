@@ -1,3 +1,6 @@
 export default abstract class Race {
-  constructor(private name: string, private dexterity: number) {}
+  private _name: string;
+  private _dexterity: number;
+
+  constructor(private name: string, private dexterity: number) { }
 }
