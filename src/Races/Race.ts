@@ -7,5 +7,6 @@ export default abstract class Race {
     this._dexterity = dexterity;
   }
 
-  get name() {return this._name};
-  get dexterity() ;
+  get name() { return this._name; }
+  get dexterity() { return this._dexterity; }
+}
