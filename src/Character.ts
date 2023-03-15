@@ -66,7 +66,7 @@ export default class Character implements Fighter {
     this._energy.amount = 10;
   }
 
-  special(enemy: Fighter): void {
+  special(enemy: Fighter | SimpleFighter): void {
     enemy.receiveDamage(this._strength * 1.5);
   }
 }
