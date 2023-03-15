@@ -11,4 +11,8 @@ export default class Character {
   private _defense: number;
   private _dexterity: number;
   private _energy: Energy;
+
+  constructor(name: string) {
+    this._dexterity = Math.floor(Math.random() * 11); // Cálculo daqui: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  }
 }
