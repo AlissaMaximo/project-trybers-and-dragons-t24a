@@ -17,5 +17,6 @@ export default class Character {
     this._race = new Elf(name, this._dexterity);
     this._archetype = new Mage(name);
     this._maxLifePoints = (this._race.maxLifePoints / 2); // como a raça já foi setada, o maxLifePoints da raça pode ser pego
+    this._lifePoints = this._maxLifePoints; // "lifePoints por padrão com o mesmo valor de maxLifePoints da classe" <- 'da classe' significa da classe atual, ou especificaria da classe de raça
   }
 }
