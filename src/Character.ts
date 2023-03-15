@@ -26,11 +26,12 @@ export default class Character {
     };
   }
 
-  get race(): Race { return this._race; }
-  get archetype(): Archetype { return this._archetype; }
-  get lifePoints(): number { return this._lifePoints; }
-  get maxLifePoints(): number { return this._maxLifePoints; }
-  get strength(): number { return this._strength; }
-  get defense(): number { return this._defense; }
-  get dexterity(): number { return this._dexterity; }  
+  public get race(): Race { return this._race; }
+  public get archetype(): Archetype { return this._archetype; }
+  public get lifePoints(): number { return this._lifePoints; }
+  public get maxLifePoints(): number { return this._maxLifePoints; }
+  public get strength(): number { return this._strength; }
+  public get defense(): number { return this._defense; }
+  public get dexterity(): number { return this._dexterity; }
+  public get energy(): Energy { return { ...this._energy }; } // traz o que tem dentro (...) do objeto energy, e então coloca de volta em um objeto aqui
 }
