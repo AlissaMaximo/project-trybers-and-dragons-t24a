@@ -52,5 +52,9 @@ export default class Character implements Fighter {
 
   levelUp(): void {
     this._energy.amount = 10;
+    this._maxLifePoints += Math.floor(Math.random() * 11);
+    this._strength += Math.floor(Math.random() * 11);
+    this._dexterity += Math.floor(Math.random() * 11);
+    this._defense += Math.floor(Math.random() * 11);
   }
 }
