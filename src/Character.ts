@@ -1,8 +1,9 @@
 import Race, { Elf } from './Races';
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
+import Fighter from './Fighter';
 
-export default class Character {
+export default class Character implements Fighter {
   private _race: Race;
   private _archetype: Archetype;
   private _maxLifePoints: number;
@@ -34,4 +35,14 @@ export default class Character {
   public get defense(): number { return this._defense; }
   public get dexterity(): number { return this._dexterity; }
   public get energy(): Energy { return { ...this._energy }; } // traz o que tem dentro (...) do objeto energy, e então coloca de volta em um objeto aqui
+
+  receiveDamage(attackPoints: number): number {
+    const damage = attackPoints - this.defense;
+    
+    if (damage > 0) return this._lifePoints - damage;
+
+    if (this._lifePoints - damage <= 0) this._lifePoints = -1;
+
+    return this._lifePoints;
+  }
 }
