@@ -49,4 +49,8 @@ export default class Character implements Fighter {
   attack(enemy: Fighter): void {
     enemy.receiveDamage(this._strength);
   }
+
+  levelUp(): void {
+    this._energy.amount = 10;
+  }
 }
