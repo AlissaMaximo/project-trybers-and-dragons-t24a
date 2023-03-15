@@ -2,7 +2,7 @@ import Fighter, { SimpleFighter } from '../Fighter';
 import Character from '../Character';
 import Battle from './Battle';
 
-export default class PVE extends Battle {
+class PVE extends Battle {
   private _enemies: Array<Fighter | SimpleFighter>;
 
   constructor(
@@ -29,3 +29,5 @@ export default class PVE extends Battle {
     return super.fight();
   }
 }
+
+export default PVE;
