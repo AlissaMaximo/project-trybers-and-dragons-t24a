@@ -10,7 +10,7 @@ export default class Character {
   private _strength: number;
   private _defense: number;
   private _dexterity: number;
-  private _energy: Energy;
+  private _energy: Energy; // Interface Energy é um objeto
 
   constructor(name: string) {
     this._dexterity = Math.floor(Math.random() * 11); // Cálculo daqui: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -20,6 +20,9 @@ export default class Character {
     this._lifePoints = this._maxLifePoints; // "lifePoints por padrão com o mesmo valor de maxLifePoints da classe" <- 'da classe' significa da classe atual, ou especificaria da classe de raça
     this._strength = Math.floor(Math.random() * 11);
     this._defense = Math.floor(Math.random() * 11);
-    this._energy = this._archetype.energyType;
+    this._energy = {
+      type_: this._archetype.energyType,
+      amount: Math.floor(Math.random() * 11),
+    };
   }
 }
