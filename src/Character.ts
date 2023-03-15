@@ -16,5 +16,6 @@ export default class Character {
     this._dexterity = Math.floor(Math.random() * 11); // Cálculo daqui: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     this._race = new Elf(name, this._dexterity);
     this._archetype = new Mage(name);
+    this._maxLifePoints = (this._race.maxLifePoints / 2); // como a raça já foi setada, o maxLifePoints da raça pode ser pego
   }
 }
