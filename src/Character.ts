@@ -20,5 +20,6 @@ export default class Character {
     this._lifePoints = this._maxLifePoints; // "lifePoints por padrão com o mesmo valor de maxLifePoints da classe" <- 'da classe' significa da classe atual, ou especificaria da classe de raça
     this._strength = Math.floor(Math.random() * 11);
     this._defense = Math.floor(Math.random() * 11);
+    this._energy = this._archetype.energyType;
   }
 }
