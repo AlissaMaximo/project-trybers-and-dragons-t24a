@@ -25,4 +25,6 @@ export default class Character {
       amount: Math.floor(Math.random() * 11),
     };
   }
+
+  get race(): Race { return this._race; }
 }
