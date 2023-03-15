@@ -3,6 +3,7 @@ import Mage from './Mage';
 import Necromancer from './Necromancer';
 import Warrior from './Warrior';
 import Ranger from './Ranger';
+import SimpleFighter from '../Fighter/SimpleFighter';
 
 export default Archetype;
 export {
@@ -10,4 +11,5 @@ export {
   Necromancer,
   Warrior,
   Ranger,
+  SimpleFighter,
 };
