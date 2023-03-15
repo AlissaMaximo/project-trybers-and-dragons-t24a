@@ -1,5 +1,4 @@
-import { SimpleFighter } from './Archetypes';
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 
 export default class Monster implements SimpleFighter {
   private _lifePoints: number;
