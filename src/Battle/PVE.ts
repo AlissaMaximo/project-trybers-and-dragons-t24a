@@ -13,9 +13,16 @@ export default class PVE extends Battle {
   private standingEnemies: Array<Fighter | SimpleFighter> = this._enemies
     .filter((_enemy) => _enemy.lifePoints > 0);
 
+  private attackEnemy(enemy: Fighter | SimpleFighter): void {
+    this.player.attack(enemy);
+  }
+
   fight(): number {
     while (this.player.lifePoints > -1 && this.standingEnemies.length) {
-      this.standingEnemies.forEach((currentEnemy) => this.player.attack(currentEnemy));
+      this.standingEnemies.forEach((currentEnemy) => {
+        this.player.attack(currentEnemy);
+        currentEnemy.attack(this.player);
+      });
     }
 
     if (this.player.lifePoints === -1) {
