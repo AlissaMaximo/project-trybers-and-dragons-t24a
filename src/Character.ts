@@ -27,4 +27,10 @@ export default class Character {
   }
 
   get race(): Race { return this._race; }
+  get archetype(): Archetype { return this._archetype; }
+  get lifePoints(): number { return this._lifePoints; }
+  get maxLifePoints(): number { return this._maxLifePoints; }
+  get strength(): number { return this._strength; }
+  get defense(): number { return this._defense; }
+  get dexterity(): number { return this._dexterity; }  
 }
