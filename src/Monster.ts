@@ -1,4 +1,5 @@
 import { SimpleFighter } from './Archetypes';
+import Fighter from './Fighter';
 
 export default class Monster implements SimpleFighter {
   private _lifePoints: number;
@@ -23,5 +24,9 @@ export default class Monster implements SimpleFighter {
     if (this._lifePoints - damage <= 0) this._lifePoints = -1;
 
     return this._lifePoints;
+  }
+
+  attack(enemy: Fighter): void {
+    enemy.receiveDamage(this._strength);
   }
 }
