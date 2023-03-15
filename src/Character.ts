@@ -1,5 +1,5 @@
 import Race, { Elf } from './Races';
-import Archetype from './Archetypes';
+import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
 
 export default class Character {
@@ -15,5 +15,6 @@ export default class Character {
   constructor(name: string) {
     this._dexterity = Math.floor(Math.random() * 11); // Cálculo daqui: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     this._race = new Elf(name, this._dexterity);
+    this._archetype = new Mage(name);
   }
 }
