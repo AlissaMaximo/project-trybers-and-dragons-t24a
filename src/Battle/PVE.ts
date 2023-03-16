@@ -1,34 +1,30 @@
-import Character from '../Character';
 import Fighter, { SimpleFighter } from '../Fighter';
-import Monster from '../Monster';
 import Battle from './Battle';
 
-class PVE extends Battle {
+export default class PVE extends Battle {
+  private _monsters: Array<Fighter | SimpleFighter>;
+
   constructor(
-    private monsters: Array<Monster | SimpleFighter>,
-    player: Character | Fighter,
+    character: Fighter,
+    monsters: Array<Fighter | SimpleFighter>,
   ) {
-    super(player); // character torna-se player porque pega do Battle
+    super(character); // character torna-se player porque pega do Battle
+    this._monsters = monsters;
   }
 
-  private attackEnemy(enemy: Fighter | SimpleFighter): void {
-    this.player.attack(enemy);
+  private blowExchange(duelists: Array<Fighter | SimpleFighter>) {
+    duelists.forEach((duelist) => {
+      if (this.player.lifePoints > 0) this.player.attack(duelist);
+      if (duelist.lifePoints !== -1) duelist.attack(this.player);
+    });
   }
 
   fight(): number {
-    this.monsters.forEach((monster) => {
-      while (this.player.lifePoints > 0
-        && monster.lifePoints > 0) {
-        this.player.attack(monster);
-        // if (monster.lifePoints > 0) {
-        monster.attack(this.player);
-        // }
-      }
-    });
+    while (this.player.lifePoints > 0
+      && this._monsters.some((monster) => monster.lifePoints > 0)) {
+      this.blowExchange(this._monsters);
+    }
 
-    if (this.player.lifePoints === 0) return -1;
-    return 1;
+    return super.fight();
   }
 }
-
-export default PVE;
