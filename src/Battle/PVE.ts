@@ -6,14 +6,14 @@ import Battle from './Battle';
 class PVE extends Battle {
   constructor(
     private monsters: Array<Monster | SimpleFighter>,
-    _character: Character | Fighter,
+    player: Character | Fighter,
   ) {
-    super(_character); // character torna-se player porque pega do Battle
+    super(player); // character torna-se player porque pega do Battle
   }
 
-  /*   private attackEnemy(enemy: Fighter | SimpleFighter): void {
+  private attackEnemy(enemy: Fighter | SimpleFighter): void {
     this.player.attack(enemy);
-  } */
+  }
 
   fight(): number {
     this.monsters.forEach((monster) => {
